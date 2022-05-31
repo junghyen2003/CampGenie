@@ -1,0 +1,13 @@
+version: "3"
+services:
+  db:
+    image: postgres:13
+    container_name: campgenie_postgres
+    restart: always
+    ports:
+      - "${POSTGRES_DB_PORT}:5432"
+    environment:
+      POSTGRES_USER: "${POSTGRES_DB_USER_ID}"
+      POSTGRES_PASSWORD: "${POSTGRES_DB_USER_PASSWORD}"
+    volumes:
+      - ${POSTGRES_HOME_DIR}/data/:/var/lib/postgresql/data
