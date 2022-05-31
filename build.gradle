@@ -18,6 +18,7 @@ repositories {
     mavenCentral()
 }
 
+//TODO version 명시
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -27,6 +28,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
     implementation 'org.flywaydb:flyway-core'
+    implementation 'org.hibernate:hibernate-envers'
 
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
