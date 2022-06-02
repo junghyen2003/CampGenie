@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.7.0'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'org.liquibase.gradle' version '2.1.0'
 }
 
 group = 'com.lonikan'
@@ -27,13 +28,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
-    implementation 'org.flywaydb:flyway-core'
     implementation 'org.hibernate:hibernate-envers'
 
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
+
+    //Liquibase
+    liquibaseRuntime 'org.liquibase:liquibase-core:4.10.0'
+    liquibaseRuntime 'org.liquibase:liquibase-groovy-dsl:3.0.2'
+    liquibaseRuntime("org.liquibase.ext:liquibase-hibernate5:4.10.0")
+    liquibaseRuntime("org.postgresql:postgresql")
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework:spring-webflux'
@@ -43,4 +49,18 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+liquibase {
+    activities {
+        main {
+            changelogFile 'src/main/resources/db/changelog/db.changelog-master.json'
+            referenceUrl 'jdbc:postgresql://localhost:35432/campgenie?' +
+                    'user=' + 'campgenie' + '&' +
+                    'password=' + 'password'
+            url 'jdbc:postgresql://localhost:35432/campgenie?' +
+                    'user=' + 'campgenie' + '&' +
+                    'password=' + 'password'
+        }
+    }
 }
