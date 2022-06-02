@@ -23,10 +23,15 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-graphql'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    implementation('com.graphql-java-kickstart:graphql-java-tools:12.0.2')
+    implementation('com.graphql-java-kickstart:graphql-spring-boot-starter:12.0.0')
+    implementation('com.graphql-java-kickstart:graphiql-spring-boot-starter:11.1.0')
+    implementation('com.zhokhov.graphql:graphql-datetime-spring-boot-starter:4.1.0')
 
     implementation 'org.hibernate:hibernate-envers'
 
@@ -43,7 +48,6 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework:spring-webflux'
-    testImplementation 'org.springframework.graphql:spring-graphql-test'
     testImplementation 'org.springframework.security:spring-security-test'
 }
 
@@ -54,8 +58,8 @@ tasks.named('test') {
 liquibase {
     activities {
         main {
-            changelogFile 'src/main/resources/db/changelog/db.changelog-master.json'
-            referenceUrl 'jdbc:postgresql://localhost:35432/campgenie?' +
+            changelogFile 'src/main/resources/db/changelog/db.changelog-master1.json'
+            referenceUrl 'jdbc:postgresql://localhost:5432/campgenie?' +
                     'user=' + 'campgenie' + '&' +
                     'password=' + 'password'
             url 'jdbc:postgresql://localhost:35432/campgenie?' +

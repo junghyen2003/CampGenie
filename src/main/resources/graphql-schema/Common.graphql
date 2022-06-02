@@ -1,0 +1,9 @@
+scalar Long
+scalar LocalDateTime
+
+interface AuditingEntity {
+    createdAt: LocalDateTime!
+    createdBy: String!
+    updatedAt: LocalDateTime!
+    updatedBy: String!
+}

@@ -1,0 +1,11 @@
+type CampingEquipment implements AuditingEntity{
+    id: Long!
+    campingBrand: CampingBrand
+    name: String
+    description: String
+
+    createdAt: LocalDateTime!
+    createdBy: String!
+    updatedAt: LocalDateTime!
+    updatedBy: String!
+}

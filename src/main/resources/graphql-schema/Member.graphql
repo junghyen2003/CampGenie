@@ -1,0 +1,13 @@
+type Member implements AuditingEntity{
+    id: Long!
+    name: String
+
+    createdAt: LocalDateTime!
+    createdBy: String!
+    updatedAt: LocalDateTime!
+    updatedBy: String!
+}
+
+input MemberInput {
+    name: String!
+}

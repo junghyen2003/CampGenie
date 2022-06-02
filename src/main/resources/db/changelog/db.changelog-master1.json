@@ -1,0 +1,74 @@
+{ "databaseChangeLog": [
+  {
+    "changeSet": {
+      "id": "1654155970349-1",
+      "author": "apr (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "autoIncrement": true,
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "camping_equipment_pkey"
+                  },
+                  "name": "id",
+                  "type": "BIGINT"
+                }
+              },
+              {
+                "column": {
+                  "name": "created_at",
+                  "type": "TIMESTAMP WITHOUT TIME ZONE"
+                }
+              },
+              {
+                "column": {
+                  "name": "created_by",
+                  "type": "VARCHAR(255)"
+                }
+              },
+              {
+                "column": {
+                  "name": "updated_at",
+                  "type": "TIMESTAMP WITHOUT TIME ZONE"
+                }
+              },
+              {
+                "column": {
+                  "name": "updated_by",
+                  "type": "VARCHAR(255)"
+                }
+              },
+              {
+                "column": {
+                  "name": "camping_brand",
+                  "type": "VARCHAR(255)"
+                }
+              },
+              {
+                "column": {
+                  "name": "description",
+                  "type": "TEXT"
+                }
+              },
+              {
+                "column": {
+                  "name": "name",
+                  "type": "VARCHAR(255)"
+                }
+              }
+            ]
+            ,
+            "tableName": "camping_equipment"
+          }
+        }
+      ]
+      
+    }
+  }
+  
+]}

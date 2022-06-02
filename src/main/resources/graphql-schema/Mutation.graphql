@@ -1,0 +1,5 @@
+type Mutation {
+    createMember(
+        member: MemberInput!
+    ): Member
+}
