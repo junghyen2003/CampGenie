@@ -1,0 +1,9 @@
+type Query {
+    findMember(
+        id: Long
+    ): Member
+
+    findCampingEquipment(
+        id: Long
+    ): CampingEquipment
+}

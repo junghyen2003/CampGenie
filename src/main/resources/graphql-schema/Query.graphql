@@ -1,5 +1,0 @@
-type Query {
-    findMember(
-        id: Long
-    ): Member
-}

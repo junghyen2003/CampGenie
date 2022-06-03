@@ -1,6 +1,6 @@
-type CampingEquipment implements AuditingEntity{
+type CampingEquipment implements AuditingEntity {
     id: Long!
-    campingBrand: CampingBrand
+#    campingBrand: CampingBrand
     name: String
     description: String
 

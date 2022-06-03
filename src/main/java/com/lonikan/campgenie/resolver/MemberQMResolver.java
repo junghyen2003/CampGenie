@@ -2,16 +2,14 @@ package com.lonikan.campgenie.resolver;
 
 import com.lonikan.campgenie.model.Member;
 import com.lonikan.campgenie.service.MemberService;
-import graphql.kickstart.annotations.GraphQLMutationResolver;
-import graphql.kickstart.annotations.GraphQLQueryResolver;
+import graphql.kickstart.tools.GraphQLMutationResolver;
+import graphql.kickstart.tools.GraphQLQueryResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@GraphQLQueryResolver
-@GraphQLMutationResolver
 @RequiredArgsConstructor
-public class MemberQMResolver {
+public class MemberQMResolver implements GraphQLQueryResolver, GraphQLMutationResolver {
     private final MemberService memberService;
 
     public Member createMember(Member member) {
