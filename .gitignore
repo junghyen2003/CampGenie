@@ -1,6 +1,7 @@
 HELP.md
 .gradle
 derby.log
+logs/
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
