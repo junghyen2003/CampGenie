@@ -5,8 +5,9 @@ import lombok.Getter;
 
 import javax.persistence.*;
 
-@Entity
 @Getter
+@Table(name = "camping_equipment")
+@Entity
 public class CampingEquipment extends AuditingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +23,6 @@ public class CampingEquipment extends AuditingEntity {
     /**
      * 장비 이름
      */
-    @Column
     private String name;
 
     /**
